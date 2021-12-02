@@ -1,0 +1,6 @@
+provinces = ("Bangkok", "Nan","Roi Et","Loei")
+print(f'provinces[:2]: {provinces[:2]}')
+print(f'provinces[2:]: {provinces[2:]}')
+print(f'provinces[1:3]: {provinces[1:3]}')
+print(f'provinces[-4:-2]: {provinces[-4:-2]}')
+print(f'provinces[-2:-4]: {provinces[-2:-4]}')

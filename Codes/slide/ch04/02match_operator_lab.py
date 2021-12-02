@@ -1,0 +1,5 @@
+print('1234 + 71.0 = ',1234 + 71.0)
+print('45//5.0 = ',45//5.0)
+print('77/True = ',77/True)
+print('False//3 = ',False//3)
+print('Hello' + 11)

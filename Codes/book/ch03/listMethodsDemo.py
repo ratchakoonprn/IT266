@@ -1,0 +1,28 @@
+a = ['Jame', 'Anna']
+b = ['Mike', 'April']
+a.append(b)
+print(a)
+b.clear()
+print(b)
+c = a.copy()
+print(c)
+d = a.count("Anna")
+print(d)
+e = ['apple', 'banana', 'cherry']
+a.extend(e)
+print(a)
+f = a.index('banana')
+print(f)
+a.insert(0,'Hi')
+print(a)
+a.pop(3)
+print(a)
+a.remove("Anna")
+print(a)
+a.reverse()
+print(a)
+a.sort()
+print(a)
+g = [3,1,8,23,9]
+g.sort(reverse=True)
+print(g)
