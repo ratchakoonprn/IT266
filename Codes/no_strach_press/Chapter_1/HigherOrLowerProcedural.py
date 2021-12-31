@@ -27,17 +27,20 @@ print('You have 50 points to start.')
 print()
 
 startingDeckList = []
-for suit in SUIT_TUPLE:
-    for thisValue, rank in enumerate(RANK_TUPLE):
+for suit in SUIT_TUPLE: # สำหรับไพ่แต่ละแบบ โพ, หัวใจ, ข้าวหลามตัด, ดอกจิก รวม 4 ตัว
+    for thisValue, rank in enumerate(RANK_TUPLE): # RANK_TUPLE ค่าของไพ่มี 13 ค่า eg. thisValue = 0, rank = 'Ace'
         cardDict = {'rank':rank, 'suit':suit, 'value':thisValue + 1}
-        startingDeckList.append(cardDict)
+        startingDeckList.append(cardDict) 
+        # {'rank':'Ace', 'suit':'Spades', 'value':1} ใบที่ 1
+        # ....
+        # {'rank':'Ace', 'suit':'Spades', 'value':13} ใบที่ 13
         
 score = 50
 
 while True:  # play multiple games
     print()
-    gameDeckList = shuffle(startingDeckList)
-    currentCardDict = getCard(gameDeckList)
+    gameDeckList = shuffle(startingDeckList) # สับไพ่
+    currentCardDict = getCard(gameDeckList) # แสดงไพ่ใบแรก
     currentCardRank = currentCardDict['rank']
     currentCardValue = currentCardDict['value']
     currentCardSuit = currentCardDict['suit']    
