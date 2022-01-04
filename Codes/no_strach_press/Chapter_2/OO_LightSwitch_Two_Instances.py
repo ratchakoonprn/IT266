@@ -20,11 +20,11 @@ oLightSwitch1 = LightSwitch()  # create a LightSwitch object
 oLightSwitch2 = LightSwitch()  # create another LightSwitch object
 
 #  Test code
-oLightSwitch1.show()
-oLightSwitch2.show()
-oLightSwitch1.turnOn() # Turn switch 1 on
+oLightSwitch1.show() #False
+oLightSwitch2.show() #False
+oLightSwitch1.turnOn() # True Turn switch 1 on 
 # Switch 2 should be off at start, but this makes it clearer
-oLightSwitch2.turnOff()  
-oLightSwitch1.show()
-oLightSwitch2.show()
-
+oLightSwitch2.turnOff()  #True
+oLightSwitch1.show() #True
+oLightSwitch2.show() #False
+print(type(oLightSwitch1))

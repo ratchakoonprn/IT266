@@ -28,23 +28,23 @@ class DimmerSwitch():
 oDimmer = DimmerSwitch() 
 
 # Turn switch on, and raise the level 5 times
-oDimmer.turnOn()
-oDimmer.raiseLevel()
-oDimmer.raiseLevel()
-oDimmer.raiseLevel()
-oDimmer.raiseLevel()
-oDimmer.raiseLevel()
+oDimmer.turnOn() #True
+oDimmer.raiseLevel() #1
+oDimmer.raiseLevel() #2
+oDimmer.raiseLevel() #3
+oDimmer.raiseLevel() #4
+oDimmer.raiseLevel() #5
 oDimmer.show()
 
 # Lower the level 2 times, and turn off
-oDimmer.lowerLevel()
-oDimmer.lowerLevel()
-oDimmer.turnOff()
+oDimmer.lowerLevel() #4
+oDimmer.lowerLevel() #3
+oDimmer.turnOff() #False
 oDimmer.show()
 
 # Turn switch on, and raise the level 3 times
-oDimmer.turnOn()
-oDimmer.raiseLevel()
-oDimmer.raiseLevel()
-oDimmer.raiseLevel()
+oDimmer.turnOn() #True
+oDimmer.raiseLevel() #4
+oDimmer.raiseLevel() #5
+oDimmer.raiseLevel() #6
 oDimmer.show()

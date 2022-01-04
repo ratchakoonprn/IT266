@@ -57,3 +57,4 @@ print('After depositing 100, users balance is:', usersBalance)
 
 # Show the new account
 accountsDict[newAccountNumber].show()
+print(accountsDict)

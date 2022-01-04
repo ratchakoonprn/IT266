@@ -13,42 +13,42 @@ class TV():
         self.volume = self.VOLUME_MAXIMUM // 2  # integer divide
         
     def power(self):
-        self.isOn = not self.isOn   # toggle
+        self.isOn = not self.isOn   # toggle เปลี่ยนสถานะจากปิดเป็นเปิด หรือจากเปิดเป็นปิด
 
     def volumeUp(self):
-        if not self.isOn:
+        if not self.isOn: #ถ้า self.isOn มีค่าเป็น False (เครื่องปิด) ก็จะไม่ทำอะไร
             return
-        if self.isMuted:
+        if self.isMuted: #ถ้า self.isMuted เป็น True ก็ให้ทำการเปิดเสียง
             self.isMuted = False  # changing the volume while muted unmutes the sound
         if self.volume < self.VOLUME_MAXIMUM:
-            self.volume = self.volume + 1
+            self.volume = self.volume + 1 #หากความดังไม่ถึง 10 ให้เพิ่มระดับเสียงขึ้นอีก 1 ระดับ
 
     def volumeDown(self):
-        if not self.isOn:
+        if not self.isOn: #ถ้า self.isOn มีค่าเป็น False (เครื่องปิด) ก็จะไม่ทำอะไร
             return
-        if self.isMuted:
+        if self.isMuted: #ถ้า self.isMuted เป็น True ก็ให้ทำการเปิดเสียง
             self.isMuted = False  # changing the volume while muted unmutes the sound
         if self.volume > self.VOLUME_MINIMUM:
-            self.volume = self.volume - 1
+            self.volume = self.volume - 1 #ถ้าระดับเสียงมากกว่า 1 ให้ทำการลดระดับเสียงลง 1 ระดับ
 
     def channelUp(self):
-        if not self.isOn:
+        if not self.isOn: #ถ้า self.isOn มีค่าเป็น False (เครื่องปิด) ก็จะไม่ทำอะไร
             return
-        self.channelIndex = self.channelIndex + 1
-        if self.channelIndex == self.nChannels:
+        self.channelIndex = self.channelIndex + 1 #เปลี่ยนไปยังช่องถัดไป
+        if self.channelIndex == self.nChannels: #หากช่อง indexท คือช่องสุดท้าย ก็จะกลับไปที่ช่องเริ่มต้นอีกครั้ง
             self.channelIndex = 0  # wrap around to the first channel
 
     def channelDown(self):
-        if not self.isOn:
+        if not self.isOn: #ถ้า self.isOn มีค่าเป็น False (เครื่องปิด) ก็จะไม่ทำอะไร
             return
-        self.channelIndex = self.channelIndex - 1
-        if self.channelIndex < 0:
+        self.channelIndex = self.channelIndex - 1 #เปลี่ยนไปยังช่องก่อนหน้า
+        if self.channelIndex < 0: #หากขณะนี้คือช่องเริ่มต้นการกดลดช่องก็ยังวนไปยังช่องสุดท้ายของลิสต์แทน
             self.channelIndex = self.nChannels - 1    # wrap around to the top channel
 
     def mute(self):
-        if not self.isOn:
+        if not self.isOn: #ถ้า self.isOn มีค่าเป็น False (เครื่องปิด) ก็จะไม่ทำอะไร
             return
-        self.isMuted = not self.isMuted
+        self.isMuted = not self.isMuted #ทำการปิด หรือ เปิดเสียง
 
     def setChannel(self, newChannel):
         if newChannel in self.channelList:
@@ -73,8 +73,8 @@ class TV():
 oTV = TV()  # create the TV object
 
 # Turn the TV on and show the status
-oTV.power()
-oTV.showInfo()
+oTV.power() # on
+oTV.showInfo() # channel 2, volume 5
 
 # Change the channel up twice, and raise the volume twice, show status
 oTV.channelUp()
